@@ -5,7 +5,7 @@ If you want to add additional functionality of checking if paranthesis are balan
 Copy the Paranthesis_Balance.cpp and save it in your desktop and then include the path of file 
 Make sure there should not the main in "Paranthesis_Balance.cpp" just comment it. then it will work properly
 Else comment the 8 line */
-#include "C:\\Users\\sony\\DeskTOP\\DSA\\Stack\\Paranthesis_Balance.cpp"
+#include "path of paranthesis balance.cpp"
 #include<string>
 using namespace std;
 #define size 100
