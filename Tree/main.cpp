@@ -19,6 +19,10 @@ void Blue()
 {
 	setColor(1);
 }
+void Cyan()
+{
+	setColor(3);
+}
 void Yellow()
 {
 	setColor(6);
@@ -46,7 +50,7 @@ node* create()
 	node *newnode = new node();
 	int x;
 	cout<<"Enter the value you want to insert in node (-1 for no node) : ";
-	cin>>x;
+	Blue();cin>>x;Reset();
 	// base condition to terminate the recursive call
 	if(x == -1)
 	{
@@ -54,10 +58,12 @@ node* create()
 	}
 	newnode->data = x;
 	// recursive call for left child
-	cout<<"Enter the left child of : "<< x <<endl;
+	cout<<"Enter the left child of : ";
+	Red();cout<< x <<endl;Reset();
 	newnode->left_child = create();
 	// recursive call for right child
-	cout<<"Enter the right child of : "<< x <<endl;
+	cout<<"Enter the right child of : ";
+	Red();cout<< x <<endl;Reset();
 	newnode->right_child = create();
 	
 	return newnode;	
@@ -68,7 +74,7 @@ void traverse_preorder(node *root)// root - left - right
 	{
 		return;
 	}
-	cout << root->data << ends;
+	Cyan();cout << root->data << ends;Reset();
 	traverse_preorder(root->left_child);
 	traverse_preorder(root->right_child);
 }
@@ -80,7 +86,7 @@ void traverse_inorder(node *root)// left - root - child
 		return;
 	}
 	traverse_inorder(root->left_child);
-	cout << root->data << ends;
+	Cyan();cout << root->data << ends;Reset();
 	traverse_inorder(root->right_child);
 }
 void traverse_postorder(node *root)// left - right - root
@@ -91,7 +97,7 @@ void traverse_postorder(node *root)// left - right - root
 	}
 	traverse_postorder(root->left_child);
 	traverse_postorder(root->right_child);
-	cout << root->data << ends;
+	Cyan();cout << root->data << ends;Reset();
 }
 void instruction()
 {
@@ -134,11 +140,11 @@ int main()
 				cout<<" are elements in tree : \n";
 				break;
 			case 0:
-				cout<<"Exiting ..... \n";
+				Red();cout<<"Exiting ..... \n";Reset();
 				start = false;
 				break;
 			default:
-				cout<<"Check your choice : \n";
+				Red();cout<<"Check your choice : \n";Reset();
 				break;
 		}
 			
