@@ -1,5 +1,37 @@
 #include<iostream>
+#include <windows.h>
 using namespace std;
+// Function to change text color
+void setColor(int colorCode) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, colorCode);
+}
+
+void Red()
+{
+	setColor(4);
+}
+void Green()
+{
+	setColor(2);
+}
+void Blue()
+{
+	setColor(1);
+}
+void Yellow()
+{
+	setColor(6);
+}
+void Grey()
+{
+	setColor(8);
+}
+void Reset()
+{
+	setColor(7);
+}
+
 
 struct node
 {
@@ -63,24 +95,26 @@ void traverse_postorder(node *root)// left - right - root
 }
 void instruction()
 {
-	cout<<"1-> Creating tree :\n";
+	Grey();cout<<"1-> Creating tree :\n";
 	cout<<"2-> PreOrder Traversal : \n";
 	cout<<"3-> InOrder Traversal : \n";
-	cout<<"4-> PostOrder Traversal : \n";
-	cout<<"0-> Exit. \n";
+	cout<<"4-> PostOrder Traversal : \n";Reset();
+	Red();cout<<"0-> Exit. \n";Reset();
 }
 
 int main()
 {
 	node *head;
+	Yellow();
 	cout<<"Hello welcome to Tree Data Structre \n";
+	Reset();
 	instruction();
 	int choice;
 	bool start = true;
 	while(start)
 	{
-		cout<<"\nChoice -> ";
-		cin>>choice;
+		Green();cout<<"\nChoice -> ";Reset();
+		Blue();cin>>choice;Reset();
 		switch(choice)
 		{
 			case 1: 
