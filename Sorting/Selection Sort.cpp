@@ -68,7 +68,14 @@ void SelectionSort(int arr[], int n)
 	}	
 }
 int main()
-{
+{	
+	Red();
+	cout<<"------------------------------------------------------------------\n";
+	cout<<"-                                                                -\n";
+	cout<<"-                       ";Cyan();cout<<"SELECTION SORT";Reset();Red();cout<<"                           -\n";
+	cout<<"-                                                                -\n";
+	cout<<"------------------------------------------------------------------\n";
+	Reset();
 	int n;
 	Red();cout<<"[+] ";Reset();
 	Green();cout<<"Enter the number of element you want in an array\n";Reset();
