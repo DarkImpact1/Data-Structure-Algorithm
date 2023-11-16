@@ -72,7 +72,10 @@ int main()
 	Red();
 	cout<<"------------------------------------------------------------------\n";
 	cout<<"-                                                                -\n";
-	cout<<"-                       ";Cyan();cout<<"SELECTION SORT";Reset();Red();cout<<"                           -\n";
+	cout<<"-                       ";
+	Cyan();cout<<"SELECTION SORT";Reset();
+	Red();
+	cout<<"                           -\n";
 	cout<<"-                                                                -\n";
 	cout<<"------------------------------------------------------------------\n";
 	Reset();
