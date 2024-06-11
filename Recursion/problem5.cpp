@@ -1,21 +1,21 @@
-// Problem : Print N ---- > 1 using recursion
+// Problem 5 : print 1 ---> n using recursion without using + operator
 
 #include <iostream>
 using namespace std;
 
 
-void print(int n){
-    if(n < 1){
+void print(int i,int n){
+    if(i < 1){
         return;
     }
-    cout << n-- << endl;
-    print(n);
+    print(i-1,n);
+    cout << i << endl;
 }
 
 int main() {
     int n;
     cout<<"Enter value of N upto which you want to print series : ";
     cin >> n;
-    print(n);
+    print(n,n);
     return 0;
 }
