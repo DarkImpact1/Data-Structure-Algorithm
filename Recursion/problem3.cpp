@@ -1,5 +1,5 @@
 // Problem : Print N ----> 1 using recursion but without using Negative sign 
-
+// This problem is basically a backtracking problem
 #include <iostream>
 using namespace std;
 void print(int i, int n){
@@ -7,6 +7,7 @@ void print(int i, int n){
         return ;
     }
     print(i+1,n);
+    // printing after recursive call 
     cout<<i<<endl;
 }
 
