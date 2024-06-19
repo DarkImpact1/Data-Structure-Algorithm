@@ -11,6 +11,10 @@ void print(int i,int n){
 }
 
 int main() {
-    print(1,10);
+    cout<<"Problem : print 1---> N using recursion "<<endl;
+    int n;
+    cout<<"Enter value of N : ";
+    cin >> n;
+    print(1,n);
     return 0;
 }

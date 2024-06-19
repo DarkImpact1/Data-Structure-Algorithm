@@ -13,8 +13,9 @@ void print(int n){
 }
 
 int main() {
+    cout<<"Print N ---- > 1 using recursion"<<endl;
     int n;
-    cout<<"Enter value of N upto which you want to print series : ";
+    cout<<"Enter value of N: ";
     cin >> n;
     print(n);
     return 0;

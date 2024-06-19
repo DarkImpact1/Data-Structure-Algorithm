@@ -12,6 +12,10 @@ void print(int i, int n){
 }
 
 int main() {
-    print(1,5);
+    cout<<"Print N ----> 1 using recursion but without using Negative sign "<<endl;
+    int n;
+    cout<<"Enter value of N: ";
+    cin >> n;
+    print(1,n);
     return 0;
 }

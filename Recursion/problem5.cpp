@@ -13,8 +13,9 @@ void print(int i,int n){
 }
 
 int main() {
+    cout<<"Problem 5 : print 1 ---> n using recursion without using + operator"<<endl;
     int n;
-    cout<<"Enter value of N upto which you want to print series : ";
+    cout<<"Enter value of N: ";
     cin >> n;
     print(n,n);
     return 0;
