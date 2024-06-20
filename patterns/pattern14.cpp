@@ -5,6 +5,7 @@ Pattern :
             ABC
             AB
             A
+            
 */
 
 #include<bits/stdc++.h>
