@@ -1,5 +1,5 @@
 /*
-pattern1 :                      *******
+pattern :                      *******
                                 *******
                                 *******
                                 *******
@@ -18,7 +18,5 @@ void pattern1(int n){
 }
 int main(){
     cout<<"Pattern 1 :"<<endl;
-    int n;
-    cin>>n;
-    pattern1(n);
+    pattern1(5);
 }

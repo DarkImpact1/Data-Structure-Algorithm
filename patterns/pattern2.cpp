@@ -1,5 +1,10 @@
 /*
-pattern1 : 
+pattern 2:
+                *
+                **
+                ***
+                ****
+                ***** 
 */
 
 #include<bits/stdc++.h>
