@@ -23,9 +23,7 @@ void OptimisedBubbleSort()
 				temp=arr[j];
 				arr[j]=arr[j+1];
 				arr[j+1]=temp;
-				flag = 
-				
-				1;/*in order to check wether swap is take place or not 
+				flag = 1;/*in order to check wether swap is take place or not 
 				if swapping is not done it means array is sorted and we will break the loop*/
 			}
 		}
