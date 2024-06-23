@@ -67,6 +67,7 @@ void BubbleSort(int arr[], int n){
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
+		cin.get();
         }
     }
 }
@@ -112,6 +113,7 @@ void SelectionSort(int arr[], int n)
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
+		cin.get();
 	}	
 }
 
@@ -141,9 +143,34 @@ void insertion_sort(int arr[], int n){
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
+		cin.get();
     }
 }
+// QUICK SORT
 
+int partition(int arr[], int low, int high){
+    int pivot = arr[low];
+    int i=low, j = high;
+    while(i < j){
+        while(arr[i] <= pivot && i < high){
+            i++;
+        }
+        while(arr[j] > pivot && j > low){
+            j--;
+        }
+        if(i < j) swap(arr[i],arr[j]);
+    }
+    swap(arr[low],arr[j]);
+    return j;
+    
+}
+void quickSort(int arr[],int low, int high){
+    if(low < high){
+        int pIndex = partition(arr, low, high);
+        quickSort(arr,low, pIndex-1);
+        quickSort(arr,pIndex+1, high);
+    }
+}
 int main()
 {	
 
@@ -151,14 +178,14 @@ int main()
 	Red();cout<<"[+] ";Reset();
 	Green();cout<<"Enter the number of element you want in an array\n";Reset();
 	
-	Red();cout<<"[-] ";Reset();
+	Red();cout<<"[-] n >> ";Reset();
 	Blue();cin>>n;Reset();
 	
 	int arr[n];
 	
 	Red();cout<<"[+] ";Reset();
 	Green();cout<<"Enter the elements in an array \n";Reset();
-	Red();cout<<"[-] ";Reset();
+	Red();cout<<"[-] separated by space >> ";Reset();
 	for(int i=0;i<n;i++)
 	{
 		Blue();cin>>arr[i];Reset();
@@ -166,9 +193,9 @@ int main()
 	// Asking user's choice for sorting
 	bool correct_choice = true;
 	Red();cout<<"[+] ";Reset();
-	Green();cout<<"SELECT \n1 -> SELECTION SORT\n2 -> BUBBLE SORT\n3 -> INSERTION SORT \n";Reset();
+	Green();cout<<"SELECT \n\t1 -> SELECTION SORT\n\t2 -> BUBBLE SORT\n\t3 -> INSERTION SORT\n\t4 -> QUICK SORT \n";Reset();
 	int choice;
-	Red();cout<<"[-] ";Reset();
+	Red();cout<<"[-] choice >> ";Reset();
 	Blue();cin>>choice;Reset();
  	
 	if(choice == 1){
@@ -177,6 +204,22 @@ int main()
 		BubbleSort(arr,n);
 	}else if(choice == 3){
 		insertion_sort(arr,n);
+	}else if(choice == 4){
+		    Red();
+		cout<<"------------------------------------------------------------------\n";
+		cout<<"-                                                                -\n";
+		cout<<"-                       ";
+		Cyan();cout<<"QUICK SORT    ";Reset();
+		Red();
+		cout<<"                           -\n";
+		cout<<"-                                                                -\n";
+		cout<<"------------------------------------------------------------------\n";
+		Reset();
+		quickSort(arr,0,n-1);
+		for(int i=0;i<n;i++)
+		{
+			Yellow();cout<<arr[i]<<" ";Reset();
+		}
 	}else{
 		Red();cout<<"[+] Wrong choice : Choose number between 1 to 3";Reset();
 		correct_choice = false;
