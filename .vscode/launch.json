@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "f:/Github/Data-Structure-Algorithm/Recursion",
-      "program": "f:/Github/Data-Structure-Algorithm/Recursion/build/Debug/outDebug",
+      "cwd": "f:/Github/Data-Structure-Algorithm",
+      "program": "f:/Github/Data-Structure-Algorithm/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

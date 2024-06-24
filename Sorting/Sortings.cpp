@@ -67,7 +67,6 @@ void BubbleSort(int arr[], int n){
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
-		cin.get();
         }
     }
 }
@@ -113,7 +112,6 @@ void SelectionSort(int arr[], int n)
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
-		cin.get();
 	}	
 }
 
@@ -143,7 +141,6 @@ void insertion_sort(int arr[], int n){
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 		cout<<"\n";
-		cin.get();
     }
 }
 // QUICK SORT
@@ -173,9 +170,9 @@ void quickSort(int arr[],int low, int high){
 }
 int main()
 {	
-
+	while(true){
 	int n;
-	Red();cout<<"[+] ";Reset();
+	Red();cout<<"\n[+] ";Reset();
 	Green();cout<<"Enter the number of element you want in an array\n";Reset();
 	
 	Red();cout<<"[-] n >> ";Reset();
@@ -190,6 +187,7 @@ int main()
 	{
 		Blue();cin>>arr[i];Reset();
 	}
+	
 	// Asking user's choice for sorting
 	bool correct_choice = true;
 	Red();cout<<"[+] ";Reset();
@@ -198,6 +196,7 @@ int main()
 	Red();cout<<"[-] choice >> ";Reset();
 	Blue();cin>>choice;Reset();
  	
+	
 	if(choice == 1){
 		SelectionSort(arr,n);
 	}else if(choice == 2){
@@ -221,8 +220,9 @@ int main()
 			Yellow();cout<<arr[i]<<" ";Reset();
 		}
 	}else{
-		Red();cout<<"[+] Wrong choice : Choose number between 1 to 3";Reset();
+		Red();cout<<"[+] Wrong choice : Choose number between 1 to 4 ";Reset();
 		correct_choice = false;
+		break;
 	}
 
 	
@@ -232,6 +232,7 @@ int main()
 	for(int i=0;i<n;i++)
 	{
 		Cyan();cout<<arr[i]<<" ";Reset();
+	}
 	}
 	}
 }
