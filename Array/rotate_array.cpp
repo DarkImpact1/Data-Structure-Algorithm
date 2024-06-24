@@ -29,11 +29,19 @@ void leftRotateByD(int arr[], int n, int d){
         arr[i] = temp[i - (n-d)];
     }
 }
+// simplest method 
+void rotate(int arr[], int n, int d){
+    //[1,2,3,4,5]
+    // d = 3
+    reverse(arr,arr+d); // [3,2,1]
+    reverse(arr+d,arr+n); // [5,4]
+    reverse(arr,arr+n);//[4,5,1,2,3]
+}
 int main() {
     int arr[5] = {1,2,3,4,5};
-    // rotate_one(arr,5);
-    leftRotateByD(arr,5,1);
-    cout<<"left Rotated array by dth index "<<endl;
+    int d=3;
+    rotate(arr,5,d);
+    cout<<"left Rotated array by "<<d<<"th index "<<endl;
     for(int i=0;i<5;i++){
         cout<<arr[i]<<" ";
     }
