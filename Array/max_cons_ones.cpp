@@ -21,7 +21,5 @@ int main() {
     int arr[5]={1,2,4,5}; 
     int arr2[10] = {1,1,1,0,1,1,1,1,1,0};
     cout<<"Max 1s are : "<< find_max_ones(arr2,10);
-
-
     return 0;
 }
