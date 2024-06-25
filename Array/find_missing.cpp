@@ -11,6 +11,10 @@ int find_missing(int arr[], int n){
     return sum-add;
 }
 // Optimal Solution
+/*
+The reason it is optimal because it will now exceed the space n and in case of previous one 
+since it is using n * n+1, it may exceed if n = 10**5 then we have to take another datatype "long"
+*/
 int find_missing2(int arr[], int n){
     int xor1 = 0;
     int xor2 = 0;
