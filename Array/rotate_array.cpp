@@ -1,6 +1,8 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+
+
 // left rotate arry by one place 
 void rotate_one(int arr[], int n){
     int temp = arr[0];

@@ -31,7 +31,7 @@ int removeDuplicates2(vector<int> &nums){
 }
 int main() {
     vector<int> vec  = {0,1,1,1,1,2,2,3,3,4,5};
-    int n = removeDuplicates(vec);
+    int n = removeDuplicates2(vec);
     for(int i=0; i<n; i++){
         cout<<vec[i]<<" ";
     }
