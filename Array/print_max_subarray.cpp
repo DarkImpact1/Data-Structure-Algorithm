@@ -1,4 +1,4 @@
-#include<bits/stc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 // Kadane's algorithm for max_subarray O(n) returning vector
