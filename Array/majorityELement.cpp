@@ -1,4 +1,3 @@
-// Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -32,6 +31,7 @@ int better_find_majority(vector<int> nums){
     }
     return -1;
 }
+
 
 
 // OPTIMATL SOLTION USING MOORE'S ALGORITHM
