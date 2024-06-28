@@ -29,8 +29,7 @@ int better_max_Subarr(vector<int> nums){
     int m=nums[0];
     for(int i=0;i<n;i++){
         int s=0;
-        for(int j=0; j<n; j++){
-            if(i == j) continue;
+        for(int j=i; j<n; j++){
             s += nums[j];
             m = max(s,m);
         }
