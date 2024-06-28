@@ -44,10 +44,10 @@ int optimal_max_Subarr(vector<int> nums){
     int s=0;
     for(int i=0; i<nums.size(); i++){
         s += nums[i];
+        m = max(s,m);
         if(s < 0){
             s = 0;
         }
-        m = max(s,m);
     }
     return m;
 }
