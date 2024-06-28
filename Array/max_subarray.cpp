@@ -37,8 +37,23 @@ int better_max_Subarr(vector<int> nums){
     }
     return m;
 }
+
+// Kadane's algorithm for max_subarray O(n)
+int optimal_max_Subarr(vector<int> nums){
+    int m=nums[0];
+    int s=0;
+    for(int i=0; i<nums.size(); i++){
+        s += nums[i];
+        if(s < 0){
+            s = 0;
+        }
+        m = max(s,m);
+    }
+    return m;
+}
+
 int main() {
     vector<int> vec = {-2,1,-3,4,-1,2,1,-5,4};
-    cout<<brute_max_Subarr(vec);
+    cout<<optimal_max_Subarr(vec);
     return 0;
 }
