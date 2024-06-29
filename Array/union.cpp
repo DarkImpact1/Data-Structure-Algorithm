@@ -12,12 +12,15 @@ vector<int> find_union(int arr1[], int n1, int arr2[], int n2){
                 union_arr.push_back(arr1[i]);
             }
             i++;
+
         }else{
             if(union_arr.size() == 0 || union_arr.back() != arr2[j]){
                 union_arr.push_back(arr2[j]);
             }
             j++;
         }
+
+        
     }
     while(i < n1){
         if(union_arr.size() == 0 || union_arr.back() != arr1[i]){

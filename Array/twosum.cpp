@@ -21,8 +21,16 @@ string sumExist(int n, vector<int> nums, int k){
     int left = 0, right = n-1;
     sort(nums.begin(), nums.end());
     while(left < right){
-        
+        int sum = nums[left]+nums[right];
+        if(sum == k){
+            return "yes";
+        } else if(sum < k){
+            left++;
+        }else{
+            right++;
+        }
     }
+    return "no";
 }
 int main(){
     vector<int> vec = {2,4,3,5,6,8};
