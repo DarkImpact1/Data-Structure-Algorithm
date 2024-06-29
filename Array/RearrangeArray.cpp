@@ -20,8 +20,24 @@ vector<int> rearrangeArray(vector<int>& nums) {
     return f;
     }
 
-
+vector<int> rearrangeArray1(vector<int> &nums){
+    int pos=0, neg=1;
+    vector<int> answer(nums.size());
+    for(int i=0; i<nums.size();i++){
+        if(nums[i]<0){
+            answer[neg] = nums[i];
+            neg+=2;
+        }else{
+            answer[pos] = nums[i];
+            pos+=2;
+        }
+    }
+    return answer;
+}
 
 int main(){
-
+    vector<int> nums = {-3,1,2,-5,2,-4};
+    for(auto it : rearrangeArray1(nums)){
+        cout<<it <<" ";
+    }
 }
