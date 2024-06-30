@@ -23,3 +23,11 @@ vector<int> nextPermutation(vector<int> nums){
     reverse(nums.begin()+index+1, nums.end());
     return nums;
 }
+
+int main() {
+    vector<int> vec = {1,2,3};
+    for(int i: findNextPermutation(vec)){
+        cout<<i<<" ";
+    }
+    return 0;
+}
