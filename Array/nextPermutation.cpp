@@ -10,4 +10,8 @@ vector<int> nextPermutation(vector<int> nums){
             break;
         }
     }
+    if(index == -1){
+        reverse(nums.begin(), nums.end());
+        return nums;
+    }
 }
