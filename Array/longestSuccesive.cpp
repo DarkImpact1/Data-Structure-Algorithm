@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
+int longestSuccessiveSubseq(vector<int> nums){
+    
+}
 
 
 
