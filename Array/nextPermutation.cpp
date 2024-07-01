@@ -33,7 +33,7 @@ void nextPermutation(vector<int>& nums) {
 
 int main() {
     vector<int> vec = {1,2,3};
-    findNextPermutation(vec);
+    nextPermutation(vec);
     for(int i: vec){
         cout<<i<<" ";
     }
