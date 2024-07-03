@@ -16,7 +16,7 @@ vector<vector<int>> brute_RotateMatrix(vector<vector<int>>& matrix){
 // transpose the matrix and then reverse the row.. you'will get you answer
 void optimal_RotateMatrix(vector<vector<int>>& matrix){
     int nR =matrix.size();
-    for(int i=0; i<nR; i++){
+    for(int i=0; i<nR-1; i++){
         for(int j=i+1; j<nR; j++){
             swap(matrix[i][j], matrix[j][i]);
         }
