@@ -46,10 +46,27 @@ vector<int> find_nth_row(int r){
     }
     return res;
 }
+// Given an integer numRows, return the first numRows of Pascal's triangle.
 
+vector<vector<int>> generate(int numRows){
+    vector<vector<int>> series;
+    for(int i=1; i<=numRows; i++){
+        series.push_back(find_nth_row(i));
+    }
+    return series;
+    
+}
 int main(){
     // cout<<find_ele_pascal(3,3)<<endl;
-    for(auto ele : find_nth_row(4)){
-        cout<<ele<<" ";
+    // for(auto ele : find_nth_row(4)){
+    //     cout<<ele<<" ";
+    // }
+    
+    vector<vector<int>> traingle = generate(6);
+    for(auto row : traingle){
+        for(auto ele : row){
+            cout<<ele<<" ";
+        }
+        cout<<endl;
     }
 }
