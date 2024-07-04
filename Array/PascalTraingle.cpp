@@ -3,7 +3,7 @@ using namespace std;
 /*
          1
       1     1
-   1     2     2
+   1     2     1
  1    3     3    1
  
 
@@ -15,21 +15,41 @@ using namespace std;
       c-1
 */
 
-int find_ele_pascal(int r, int c){
-    int ans = 1;
-    int r = r - 1;
-    int c = c - 1;
+long long find_ele_pascal(int r, int c){
+    long long ans = 1; 
+    r = r - 1;
+    c = c - 1;
     for(int i = 1 ; i <=c; i++){
-            ans = ans*(r/i);
+            ans = r*(ans/i);
             r--;
     }
     return ans;
 }
 
+// second problem : find nth row given n
+/*
+    nth row have n element */
 
-
-
+vector<int> find_nth_row(int r){
+    vector<int> res;
+    int ans = 1;
+    int num = r-1;
+    for(int col=0; col< r; col++){
+        if(col == 0){
+            res.push_back(ans);
+        }else{
+            ans = ans*num;
+            ans = ans/col;
+            num--;
+            res.push_back(ans);
+        }
+    }
+    return res;
+}
 
 int main(){
-
+    // cout<<find_ele_pascal(3,3)<<endl;
+    for(auto ele : find_nth_row(4)){
+        cout<<ele<<" ";
+    }
 }
