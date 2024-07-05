@@ -14,7 +14,21 @@ int brute_maxProduct(vector<int>& nums){
     }
     return mp;
 }
-int maxProduct(vector<int>& nums) {
+
+
+int better_maxProduct(vector<int>& nums){
+    int mp = INT_MIN;
+    int n = nums.size();
+    for(int i =0; i<n; i++){
+        int p = 1;
+        for(int j = i; j<n; j++){
+                p *= nums[j];
+        }
+        mp = max(mp,p);
+    }
+    return mp;
+}
+int optimal_maxProduct(vector<int>& nums) {
         long maxproduct = 0;
         int n = nums.size();
         for(int i=0; i< n; i++){
@@ -30,7 +44,7 @@ int maxProduct(vector<int>& nums) {
 }
 
 int main(){
-    vector<int> vec = {-2,0,-1};
+    vector<int> vec = {0,2};
     cout<<brute_maxProduct(vec);
         
 }
