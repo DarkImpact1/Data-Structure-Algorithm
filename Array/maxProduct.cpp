@@ -29,20 +29,22 @@ int better_maxProduct(vector<int>& nums){
     }
     return mp;
 }
-int optimal_maxProduct(vector<int>& nums) {
-        long maxproduct = 0;
+    int maxProduct(vector<int>& nums) {
+        int mxp = INT_MIN;  // Maximum product initialized to the smallest integer
         int n = nums.size();
-        for(int i=0; i< n; i++){
-            int pr = nums[i];
-            for(int j = i+1; j<n; j++){
-                pr *= nums[j];
-                if(maxproduct < pr){
-                    maxproduct = pr;
-                }else break;
-            }
+        long long pre = 1, suf = 1;
+        for(int i = 0; i < n; i++) {
+            if(pre == 0) pre = 1;
+            if(suf == 0) suf = 1;
+            pre *= nums[i];
+            suf *= nums[n - i - 1];
+            // Reset pre and suf if they exceed 32-bit integer bounds
+            if(pre > INT_MAX || pre < INT_MIN) pre = nums[i];
+            if(suf > INT_MAX || suf < INT_MIN) suf = nums[n - i - 1];
+            mxp = max(mxp, max((int)pre, (int)suf));
         }
-        return maxproduct;
-}
+        return mxp;
+    }
 
 int main(){
     vector<int> vec = {0,2};
