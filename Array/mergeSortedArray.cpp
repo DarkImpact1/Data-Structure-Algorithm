@@ -39,6 +39,28 @@ void optimal1_merge(vector<int>& nums1, int m, vector<int>& nums2, int n){
     }
     
 }
+
+void optimal_merge2(vector<int>& nums1, int m, vector<int>& nums2, int n){
+    int left = 0;
+    int right = 0;
+    while(left < m && right < n){
+        if(nums1[left] > nums2[right]){
+            swap(nums1[left], nums2[right]);
+            int i = right;
+            while(nums2[i] > nums2[i+1] && i < n){
+                swap(nums2[i],nums2[i+1]);
+                i++;
+            }
+            right = i;
+        }
+        left++;
+    }
+
+    for(int i=0; i<n;i++){
+        nums1[m+i] = nums2[i];
+    }
+    
+}
 int main() {
     vector<int> vec1={1,2,3,0,0,0,0};
     vector<int> vec2 = {2,5,6,7};
