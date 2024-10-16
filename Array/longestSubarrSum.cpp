@@ -19,7 +19,7 @@ int maxSubarraySum(vector<int> nums, int k){
             maxlen = max(maxlen, right - left + 1);
         }
         right++;
-        if(right < n) sum+=nums[right];
+        sum+=nums[right];
     }
     return maxlen-1;
 }
