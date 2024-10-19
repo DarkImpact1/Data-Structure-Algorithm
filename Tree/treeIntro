@@ -1,0 +1,84 @@
+/* This particular program will clear all your doubt regarding the DFS and how tree data structure works */
+
+#include <iostream>
+using namespace std;
+
+class Node {
+    public:
+        int data;
+        Node* left;
+        Node* right;
+        
+    Node(int d) {
+        this->data = d;
+        this->left = nullptr;
+        this->right = nullptr;
+    }
+};
+
+
+void preOrderTraversal(Node* root){
+    if(root == nullptr){
+        cout<<"backing to previous node "<<endl;
+        return;
+    }
+    cout<<"Data : "<< root -> data<<endl;
+    cout<<"Going to the left "<<endl;
+    preOrderTraversal( root -> left );
+    cout<<"Going to the right "<<endl;
+    preOrderTraversal( root -> right);
+}
+
+void inOrderTraversal(Node* root){
+    if(root == nullptr){
+        cout<<"backing to previous node "<<endl;
+        return;
+    }
+    cout<<"Going to the left "<<endl;
+    preOrderTraversal( root -> left );
+    cout<<"Data : "<< root -> data<<endl;
+    cout<<"Going to the right "<<endl;
+    preOrderTraversal( root -> right);
+}
+void postOrderTraversal(Node* root){
+    if(root == nullptr){
+        cout<<"backing to previous node "<<endl;
+        return;
+    }
+    cout<<"Going to the left "<<endl;
+    preOrderTraversal( root -> left);
+    cout<<"Going to the right "<<endl;
+    preOrderTraversal( root -> right);
+    cout<<"Data : "<< root -> data<<endl;
+
+
+}
+Node* buildTree(Node* root) {
+    cout << "Enter the data (-1 for no node): ";
+    int num;
+    cin >> num;
+    if (num == -1) {
+        return nullptr;
+    }
+    root = new Node(num);
+    cout << "Enter the data for left node of " << num << endl;
+    root->left = buildTree(root->left);
+    cout << "Enter the data for right node of " << num << endl;
+    root->right = buildTree(root->right);
+    return root;
+}
+
+int main() {
+    cout << "Let's Learn tree and explore DFS" << endl;
+    Node* root = nullptr;
+    root = buildTree(root);
+    cout<<"\nPre order Traversal : "<<endl;
+    preOrderTraversal(root);
+    cout<<"\nIn order Traversal : "<<endl;
+    inOrderTraversal(root);
+    cout<<"\nPost order Traversal : "<<endl;
+    postOrderTraversal(root);
+    
+    
+    return 0;
+}
