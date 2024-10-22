@@ -51,6 +51,29 @@ class Solution {
         }
         return preOrder;
     }
+    // Inorder Traversal without recursion
+    vector<int> inOrderWithoutRecursion(Node* root){
+        vector<int> inOrder;
+        if(root == nullptr) return inOrder;
+        Node* node = root;
+        stack<Node*> st;
+        while(true){
+            if(node != nullptr){
+                st.push(node);
+                node = node ->left;
+            }else{
+                if(st.empty() == true) break;
+                node = st.top();
+                st.pop();
+                inOrder.push_back(node -> val);
+                node = node -> right;
+            }
+        }
+        return inOrder;
+        
+    }
+    
+
 };
 
 int main() {
@@ -79,6 +102,14 @@ int main() {
     for (int val : preOrder) {
         cout << val << " ";
     }
+    
+    cout<<"\nTraversing InOrder without using Recursion "<<endl;
+    vector<int> inOrder = agent.inOrderWithoutRecursion(root);
+    for (int val : inOrder) {
+        cout << val << " ";
+    }
+
+    
 
     return 0;
 }
