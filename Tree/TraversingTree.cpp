@@ -38,16 +38,16 @@ class Solution {
     // Pre-order traversal without recursion
     vector<int> preOrderWithoutRecursion(Node* root) {
         vector<int> preOrder;
-        if (root == nullptr) return preOrder; // Fix return variable
+        if (root == nullptr) return preOrder; 
         stack<Node*> st;
         st.push(root);
         while (!st.empty()) {
-            Node* node = st.top(); // Declare node variable with Node* type
+            root = st.top();
             st.pop();
-            preOrder.push_back(node->val);
+            preOrder.push_back(root->val);
             // Push right first so left is processed first
-            if (node->right != nullptr) st.push(node->right);
-            if (node->left != nullptr) st.push(node->left);
+            if (root->right != nullptr) st.push(root->right);
+            if (root->left != nullptr) st.push(root->left);
         }
         return preOrder;
     }
@@ -71,6 +71,22 @@ class Solution {
         }
         return inOrder;
         
+    }
+    
+    vector<int> postOrderWithoutRecursion(Node* root){
+        vector<int> postOrder;
+        if(root == nullptr) return postOrder;
+        stack<Node*> st;
+        st.push(root);
+        while(!st.empty()){
+            root = st.top();
+            st.pop();
+            postOrder.push_back(root -> val);
+            // Push left first so right is processed first
+            if(root -> left != nullptr) st.push(root -> left);
+            if(root -> right != nullptr) st.push(root -> right);
+        }
+        return postOrder;
     }
     
 
@@ -108,6 +124,13 @@ int main() {
     for (int val : inOrder) {
         cout << val << " ";
     }
+    
+    cout<<"\nTraversing PostOrder without using Recursion "<<endl;
+    vector<int> postOrder = agent.postOrderWithoutRecursion(root);
+    for (int val : postOrder) {
+        cout << val << " ";
+    }
+
 
     
 
