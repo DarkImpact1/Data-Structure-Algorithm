@@ -41,7 +41,28 @@ int optimalLongestSubrrayK(vector<int> &arr, int k){
     }
     return maxlen;
 }
+/*
+862. Shortest Subarray with Sum at Least K
+    */
+int bruteShortedSubarray(vector<int> &nums, k){
+    int n = nums.size();
+    int answer = INT_MAX;
+    bool found = false;
+    for(int i=0; i<n; i++){
+        int sum = 0;
+        for(int j = i; j<n; j++){
+            sum += nums[j];
+            if(sum == k){
+                int len = j-i+1;
+                answer = len < answer ? len : answer;
+                found = true;
+            }
+        }
+    }
+    if(found) return answer;
+    return -1;
 
+}
 int main() {
     string name = "babad";
     vector<int> arr = {12,8,1,7,10};
