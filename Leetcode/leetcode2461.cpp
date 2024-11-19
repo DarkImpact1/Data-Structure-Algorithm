@@ -14,7 +14,7 @@ Return the maximum subarray sum of all the subarrays that meet the conditions. I
 
 class Solution {
 public:
-    long long maximumSubarraySum(vector<int>& nums, int k) {
+    long long brute_maximumSubarraySum(vector<int>& nums, int k) {
         int n = nums.size();
         long long answer = 0;
         for(int i=0;i<= n-k; i++){
@@ -33,4 +33,35 @@ public:
         }
         return answer;
     }
+
+
+    long long maximumSubarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        unordered_map<int, int> hashmap;
+        long long ans = 0, sum = 0;
+        int left = 0, right = 0;
+    
+        while (right < n) {
+            hashmap[nums[right]]++;
+            sum += nums[right];
+    
+            if ((right - left + 1) > k) {
+                hashmap[nums[left]]--;
+                sum -= nums[left];
+                if (hashmap[nums[left]] == 0) {
+                    hashmap.erase(nums[left]);
+                }
+                left++;
+            }
+    
+            if ((right - left + 1) == k && hashmap.size() == k) {
+                ans = max(ans, sum);
+            }
+    
+            right++;
+        }
+    
+        return ans;
+    }
+
 };
