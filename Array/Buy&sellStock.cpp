@@ -1,3 +1,9 @@
+/*
+
+buy and sell stock problem, Basically find the maximum difference between two element in an array 
+
+    */
+
 #include<bits/stdc++.h>
 using namespace std;
 
