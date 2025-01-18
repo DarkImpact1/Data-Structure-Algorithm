@@ -33,3 +33,49 @@ int two_pointer_approach(int n, int a, int b) {
     }
     return curr_magical_num%m;
 }
+
+
+class Solution {
+public:
+    int m = 1e9 + 7;
+
+    int cal_gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    long long lcm(int a, int b) {
+        return (long long)a * b / cal_gcd(a, b);
+    }
+
+    int total_divisor(int a, int b, long long mid) {
+        long long count_a = mid / a;
+        long long count_b = mid / b;
+        long long com_a_b = mid / lcm(a, b);
+        return count_a + count_b - com_a_b;
+    }
+
+    int nthMagicalNumber(int n, int a, int b) {
+        long long low = min(a, b);
+        long long high = (long long)n * min(a, b);
+        int result = 0;
+
+        while (low <= high) {
+            long long mid = (low + high) / 2;
+            int total_till_mid = total_divisor(a, b, mid);
+
+            if (total_till_mid < n) {
+                low = mid + 1;
+            } else {
+                result = mid % m;
+                high = mid - 1;
+            }
+        }
+
+        return result;
+    }
+};
