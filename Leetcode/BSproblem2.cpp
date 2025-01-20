@@ -45,7 +45,7 @@ int findSum(vector<int>& nums){
 // using binary search O(n* log n)
 
 int optMaxKSubArrSumLessEqualX(vector<int>& nums, int X){
-    if(findSum(nums) == X) return nums.size();// for edge case
+    if(findSum(nums) == X) return nums.size();// for edge case you can also iimplement a fun which will tell ifPossible or not for size k to yield sum X
     int low = 0, high = nums.size();
     while(low <= high){
         int mid = (low+high)/2;
