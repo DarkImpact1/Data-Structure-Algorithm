@@ -57,7 +57,7 @@ int findKthElement(vector<int> &nums, int k){
             low = mid+1;
         }
     }
-    return low;
+    return 0;// 
 }
 int main() {
     vector<int> nums = {1,2,4,1,5,5,10,3};
