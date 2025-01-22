@@ -1,7 +1,16 @@
 /*
-search in sorted array
+search in rotated sorted array containing unique element
 */
 
+// if it contains duplicates then simply check for the condition add this code just after changing the value of ans
+/*
+if(nums[low] == nums[mid] && nums[mid] == nums[high]{
+    low++; 
+    high--;
+    continue;  repeate unitil youovercome duplicates
+}
+
+*/
 
 class Solution {
 public:
