@@ -22,7 +22,7 @@ public:
         }
         high = s;
     }
-
+// find number of subarray possible for the sum minSum
     int numSubArr(vector<int> & nums, int minSum){
         int numSub = 1, add = 0;
         for( auto n : nums){
