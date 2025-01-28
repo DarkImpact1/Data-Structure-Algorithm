@@ -80,10 +80,50 @@ using namespace std;
         }
         return ans;
     }
-  
+
+
+
 int main() {
     vector<int> nums = {2,3,3,4,6,7};
     cout<<numSubSeqq(nums, 12);
 
     return 0;
 }
+
+
+// optimised solution precompute the power of 2 and then use them
+
+
+
+class Solution {
+public:
+void preCompute(vector<int>& power, int n,int m){
+    for (int i = 0; i < n; i++) {
+            if (i == 0) {
+                power[i] = 1;
+            } else {
+                power[i] = (2LL * power[i - 1]) % m;
+            }
+        }  
+}
+int modAdd(int a, int b, int m){
+    return ((a%m)+(b%m))%m;
+}
+int numSubseq(vector<int>& nums, int target) {
+    sort(nums.begin(), nums.end());
+    vector<int> power(nums.size());
+    int m = 1e9 + 7;
+    preCompute(power,nums.size(),m);
+    int ans = 0;
+    int left = 0, right = nums.size()-1;
+    while(left <= right){
+        if((nums[left]+ nums[right]) <= target){
+            ans = modAdd(ans,power[right-left],m);
+            left++;
+        }else{
+            right--;
+        }
+    }
+    return ans;
+}
+};
