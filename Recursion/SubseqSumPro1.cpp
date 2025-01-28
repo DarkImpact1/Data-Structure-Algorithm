@@ -4,9 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// O(n)
 int findSum(vector<int>& nums){
     if(nums.size() == 0)return 0;
-    if(nums.size() == 1) return nums[0];
     int mini = INT_MAX, maxi=INT_MIN;
     for(auto it: nums){
         if(it < mini) mini = it;
@@ -14,6 +14,8 @@ int findSum(vector<int>& nums){
     }
     return mini +  maxi;
 }
+
+// O(2^n)
 void generateSub(int i,vector<int>&nums, vector<int> temp,int &count, int target){
     
     if(i == nums.size()){
@@ -30,6 +32,8 @@ void generateSub(int i,vector<int>&nums, vector<int> temp,int &count, int target
     temp.pop_back();
     generateSub(i+1,nums, temp,count,target);
 }
+
+// n*2^n
 int numSubseq(vector<int>& nums, int target) {
     int i=0, count=0;
     vector<int> temp;
