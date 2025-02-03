@@ -6,7 +6,6 @@ int main() {
     int n = 101;
     int result = 0;
     int i = 0;
-
     while (n != 0) {
         int bit = n & 1;
         cout<<"bit : "<<bit << endl;
