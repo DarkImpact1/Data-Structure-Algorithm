@@ -17,6 +17,11 @@ int main() {
         i++;
     }
 
+    for (int i=0; i<n; i++){
+        int bit = n&1;
+        if(n&1) res += p2 * i;
+        p2 *= 2;
+
     cout << "Answer in Decimal is " << result << endl;
     return 0;
 }
