@@ -15,7 +15,6 @@ int main() {
         cout<<"n : "<<n<<endl;
         i++;
     }
-
     for (int i=0; i<n; i++){
         int bit = n&1;
         if(n&1) res += p2 * i;
