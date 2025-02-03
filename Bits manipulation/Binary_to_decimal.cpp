@@ -3,9 +3,10 @@
 using namespace std;
 
 int main() {
-    int n = 101;
+    int string = "101";
     int result = 0;
     int i = 0;
+/*
     while (n != 0) {
         int bit = n & 1;
         cout<<"bit : "<<bit << endl;
@@ -15,7 +16,9 @@ int main() {
         cout<<"n : "<<n<<endl;
         i++;
     }
-    for (int i=0; i<n; i++){
+*/
+    p2 = 2;
+    for (int i=n.size()-1; i>=0; i--){
         int bit = n&1;
         if(n&1) res += p2 * i;
         p2 *= 2;
@@ -23,3 +26,4 @@ int main() {
     cout << "Answer in Decimal is " << result << endl;
     return 0;
 }
+
