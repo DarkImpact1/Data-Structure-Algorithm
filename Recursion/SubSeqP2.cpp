@@ -88,11 +88,21 @@ int main() {
 
 
 // optimised solution precompute the power of 2 and then use them
+/*
+Logic n
 
+number of subsequece = 2^n so that the reaison we were calculation power of 2
+
+now if [1,2,3] in this sub sum(min,max) = 4 so totol number of subseq that can yeild sum <= 4 will 2^3 i.e. 8 
+So sort the array ans use two pointer of binary search to find the max and min ele whose sum <= k then 
+increase the count += 2^(j-i) that we already have computed
+
+ */
 
 
 class Solution {
 public:
+     //                      arr      size   modulus
 void preCompute(vector<int>& power, int n,int m){
     for (int i = 0; i < n; i++) {
             if (i == 0) {
