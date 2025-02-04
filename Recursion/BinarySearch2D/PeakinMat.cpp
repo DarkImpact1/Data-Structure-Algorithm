@@ -17,7 +17,6 @@ then check whether it is peak in that row
 if it is smaller than left then move toward right 
 else move toward left
 */
-
 class Solution {
 public:
     int findMaxRow(vector<vector<int>>&matrix, int numRow, int col){
@@ -44,11 +43,10 @@ public:
             int ele = matrix[maxRow][colnum];
             // cout<<"leftEle "<<leftEle<<" ele "<<ele<<" rightEle "<<rightEl<<endl;
             if(ele > leftEle && ele > rightEl) return {maxRow,colnum};
-            // if leftelement  < ele then peak is at right side
-          
-            if(leftEle < ele) low = colnum + 1;
-            // if element > left then peak is at left
-            else high = colnum-1;
+            // if left element  > left then peak is at the left side
+            if(leftEle > ele) high = colnum - 1;
+            // else peak is at the right side
+            else low = colnum+1;
         
         }
         return {-1,-1};
