@@ -1,4 +1,4 @@
-// number of subsequence that can yeild sum <= target
+// number of subsequence that can yeild sum of min and max of arr  <= target but 
 
 
 #include <bits/stdc++.h>
