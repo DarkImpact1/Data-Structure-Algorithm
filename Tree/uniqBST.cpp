@@ -14,6 +14,7 @@ public:
         for(int i=1; i<=n; i++){
             cat[i]= 0;
             for(int j =0; j<i; j++){
+                //                  0 at left | rest at right 
                 cat[i] = cat[i] + (cat[j] * cat[i-j-1]);
             }
         }
