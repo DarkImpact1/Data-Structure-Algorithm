@@ -32,6 +32,16 @@ public:
         return 1 + min(leftD, rightD);
 
     }
+// Another approach to solve the same without using another function
+    int minDepth(TreeNode* root) {
+        if (!root) return 0; // Base case: Empty tree has depth 0
+
+        if (!root->left) return 1 + minDepth(root->right); // If left is null, go right
+        if (!root->right) return 1 + minDepth(root->left); // If right is null, go left
+
+        return 1 + min(minDepth(root->left), minDepth(root->right)); // Find min depth of both subtrees
+    }
+
     int minDepth(TreeNode* root) {
         if(root == nullptr){
             return 0;
