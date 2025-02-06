@@ -2,7 +2,6 @@
 check if tree is balanced binary tree
 /*
 
-
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -30,7 +29,22 @@ public:
 
         return 1 + max(lh, rh); // calculate hright of tree
     }
+    int getHeight(TreeNode* root, bool& isBal){
+        if(root == nullptr){
+            return 0;
+        }
+        int lh = getHeight(root->left, isBal);
+        int rh = getHeight(root->right, isBal);
+        if(abs(lh-rh) > 1){
+            isBal = false;
+        }
+        return 1+max(lh,rh);
+    }
+
     bool isBalanced(TreeNode* root) {
-        return height(root) != -1;
+        bool ans = true;
+        int h =getHeight(root, ans);
+        return ans;
+        // return height(root) != -1 ? true : false;
     }
 };
