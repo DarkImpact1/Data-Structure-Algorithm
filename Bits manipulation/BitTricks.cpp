@@ -83,9 +83,21 @@ void removeLastBit(){
     //   &1011
     // =  1000 = 8
     cout<<"value of n after removing last bit "<<n<<endl;
+}
 
+void isPowerOfTwo(){
+    int n = 16;
+    //  10000  -> 16
+    //  01111  -> 15
+    // &00000 -> 0
+    if((n&(n-1)) == 0){
+        cout<<"it is power of 2 "<<endl;
+    }else{
+        cout<<"it is not power of 2"<<endl;
+    }
+    
 }
 int main() {
 
-    removeLastBit();
+    isPowerOfTwo();
 }
