@@ -118,6 +118,17 @@ void countSetBit(){
         n = n>>1;
     }
     cout<<"number of set bit in "<<x<<" is "<<(c+n)<<endl;
+    
+    
+    // another approach of setting last bit as 0 and at last you'll make it 0
+    n = 13;
+    x = n;
+    c = 0;
+    while(n!=0){
+        c+=1;
+        n = n&n-1;
+    }
+    cout<<"number of set bit in "<<x<<" is "<<(c+n)<<endl;
 
     
 }
