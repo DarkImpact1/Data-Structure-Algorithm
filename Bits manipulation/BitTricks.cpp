@@ -59,12 +59,23 @@ void clearIthBit(){
     //  1111
     // &1011 -> 1011 i.e 11
     cout<<"value of n after clearing "<<i<<"th bit is "<<n<<endl;
+
+}
+void toggleIthBit(){
+    int n = 15, i = 2;
+    cout<<"before toggeling "<<i<<" bit n= "<<n<<endl;
+    n = n^(1<<i);
+    //  1111 
+    // ^0100 -> 1011 ->13;
+    cout<<"after toggeling "<<i<<" bit n= "<<n<<endl;
     
+    n = n^(1<<i);
+    
+    cout<<"after toggeling "<<i<<" bit again n= "<<n<<endl;
+
     
 }
 int main() {
-    swap();
-    isSetBit();
-    setIthBit();
-    clearIthBit();
+
+    toggleIthBit();
 }
