@@ -95,9 +95,33 @@ void isPowerOfTwo(){
     }else{
         cout<<"it is not power of 2"<<endl;
     }
+}
+
+void countSetBit(){
+    int n = 15; // 1111 ans-> 4;
+    int x = n;
+    int cnt = 0;
+    // simple division approach
+    while(n>1){
+        if(n%2 == 1) cnt+=1;
+        n = n/2;
+    }
+    // at last either n will be 0 or n will be 1 
+    cout<<"number of set bit in "<<x <<" is "<<(cnt+n)<<endl;
+    
+    // here is the bit apporach
+    n = x;
+    int c = 0;
+    while(n>1){
+        
+        if(n&1) c+=1;
+        n = n>>1;
+    }
+    cout<<"number of set bit in "<<x<<" is "<<(c+n)<<endl;
+
     
 }
 int main() {
 
-    isPowerOfTwo();
+    countSetBit();
 }
