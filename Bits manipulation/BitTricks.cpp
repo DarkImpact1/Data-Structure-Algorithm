@@ -72,10 +72,20 @@ void toggleIthBit(){
     n = n^(1<<i);
     
     cout<<"after toggeling "<<i<<" bit again n= "<<n<<endl;
+}
 
-    
+void removeLastBit(){
+    int n = 12;
+    cout<<"value of n before removing last bit "<<n<<endl;
+    n = n&(n-1);
+    // 12 =  1100 ; 11 = 1011
+    //    1100
+    //   &1011
+    // =  1000 = 8
+    cout<<"value of n after removing last bit "<<n<<endl;
+
 }
 int main() {
 
-    toggleIthBit();
+    removeLastBit();
 }
