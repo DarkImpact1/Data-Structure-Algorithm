@@ -42,21 +42,26 @@ void isSetBit(){
 void setIthBit(){
     int n = 13; // 1101
     int i = 1; 
-    cout<<"value of n before setting "<<i<<"th bit to 1 is "<<n<<endl;
+    cout<<"value of n before setting "<<i<<"th bit is "<<n<<endl;
 
     // after setting 1st bit 13 it should become 1111 that is 15
     n = n | 1<<i;
-    cout<<"value of n after setting "<<i<<"th bit to 1 is "<<n<<endl;
+    cout<<"value of n after setting "<<i<<"th bit is "<<n<<endl;
 }
 
 void clearIthBit(){
     int n = 15; // 1111;
-    int i = 2;
-    cout<<"value of n before setting "<<i<<"th bit to 1 is "<<n<<endl;
+    int i = 2;// 1011; 11
+    cout<<"value of n before clearing "<<i<<"th bit is "<<n<<endl;
+    
+    n = n & ~(1<<i);
+    cout<<"value of n after clearing "<<i<<"th bit is "<<n<<endl;
+    
     
 }
 int main() {
     swap();
     isSetBit();
     setIthBit();
+    clearIthBit();
 }
