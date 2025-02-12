@@ -55,6 +55,9 @@ void clearIthBit(){
     cout<<"value of n before clearing "<<i<<"th bit is "<<n<<endl;
     
     n = n & ~(1<<i);
+    //(1<<2) -> 100 and ~100 -> 011 
+    //  1111
+    // &1011 -> 1011 i.e 11
     cout<<"value of n after clearing "<<i<<"th bit is "<<n<<endl;
     
     
