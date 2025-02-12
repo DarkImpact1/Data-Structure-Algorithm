@@ -101,7 +101,7 @@ void countSetBit(){
     int n = 15; // 1111 ans-> 4;
     int x = n;
     int cnt = 0;
-    // simple division approach
+    // simple division approach O(log2 n)
     while(n>1){
         if(n%2 == 1) cnt+=1;
         n = n/2;
@@ -109,7 +109,7 @@ void countSetBit(){
     // at last either n will be 0 or n will be 1 
     cout<<"number of set bit in "<<x <<" is "<<(cnt+n)<<endl;
     
-    // here is the bit apporach
+    // here is the bit apporach 
     n = x;
     int c = 0;
     while(n>1){
@@ -120,7 +120,7 @@ void countSetBit(){
     cout<<"number of set bit in "<<x<<" is "<<(c+n)<<endl;
     
     
-    // another approach of setting last bit as 0 and at last you'll make it 0
+    // another approach of setting last bit as 0 O(no set bit)
     n = 13;
     x = n;
     c = 0;
@@ -129,6 +129,9 @@ void countSetBit(){
         n = n&n-1;
     }
     cout<<"number of set bit in "<<x<<" is "<<(c+n)<<endl;
+
+    
+    
 
     
 }
