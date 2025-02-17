@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-/*
+/* 
+
+this is the problem statement
          1
       1     1
    1     2     1
